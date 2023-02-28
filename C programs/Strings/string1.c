@@ -1,3 +1,5 @@
+// Write a C program to declare and initialize a string "Hello World" with direct initialization method as well as character by character initialization method. And also print the character 'W' from the string. 
+
 #include<stdio.h> 
 
 int main()
