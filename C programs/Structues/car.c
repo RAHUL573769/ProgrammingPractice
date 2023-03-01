@@ -11,10 +11,8 @@ int main()
 {
    //Edit below this line
 
-scanf("%s \n %d\n %s",&m.brand,&m.price,&m.colour);
-
-printf("%s \n %d\n %s",m.brand,m.price,m.colour);
+scanf("%s",&m.brand);
+printf("%s",m.brand);
 
     return 0;
 }
-
