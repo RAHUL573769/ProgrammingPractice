@@ -15,11 +15,7 @@ const server=http.createServer((req,res)=>{
 
     if(req.url==='/'){
         handleReadFile(200,'./views/index.html');
-        // fs.readFile('./views/index.html',(err,data)=>{
-        //   res.writeHead(200,{'Content-Type':"text/html"});
-        //   res.write(data);
-        //   res.end();
-        // })
+        
     }
 
     else if(req.url=='./views/about'){
