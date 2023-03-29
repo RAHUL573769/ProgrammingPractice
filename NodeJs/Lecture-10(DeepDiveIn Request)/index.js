@@ -10,11 +10,13 @@ app.use(express.json());
 
 app.get("/",(req,res)=>{
     const id=req.query.id;
-    res.send("Hello ");
+    const name=req.body.name;
+res.send(`Your Name is ${name}`);
     console.log(id);
 })
 app.post("/users",(req,res)=>{
-console.log(req.body.name);
+
+res.redirect('/');
 })
 app.get("/user/:id/age/:age",(req,res)=>{
     const id=req.params.id;
