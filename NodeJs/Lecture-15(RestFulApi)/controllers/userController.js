@@ -43,7 +43,9 @@ const getAllUsers=(req,res)=>{
 const updateUsers=(req,res)=>{
 
 const id=req.params.id;
-console.log(id);
+newUser.filter((user)=>user.id===id);
+console.log(newUser);
+
 }
 
 module.exports={getUsers,createUser,getAllUsers,updateUsers};
