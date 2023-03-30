@@ -1,13 +1,14 @@
 const express = require('express');
 const router=express.Router();
 const path = require('path');
+const { getUsers, createUser, getAllUsers, updateUsers } = require('../controllers/userController');
 
 
-router.get("/",(req,res)=>{
+router.get("/",getUsers)
 
-    res.sendFile(path.join(__dirname,"../","views",'index.html'))
+router.post("/", createUser)
 
-})
+router.put("/update/:id",updateUsers);
 router.get("*",(req,res)=>{
     res.status(404).send("<h1>404 Not Found</h1>")
 })
