@@ -25,6 +25,19 @@ router.post("/userPost",(req,res)=>{
  res.status(200).json(users);
 
 })
+router.put("/update/:id",(req,res)=>{
+    const userId=req.params.id;
+
+    const {username,email}=req.body;
+  
+    const updated=users.filter((user)=>user.id===userId)
+    .map((selectedUser=>{
+        selectedUser.username=username;
+        selectedUser.email=email;
+    }));
+  
+    res.status(200).json(users);
+})
 router.use((req,res,next)=>{
     res.status(404).send("<h1>404 Not Found</h1>")
 })
