@@ -50,9 +50,10 @@ try {
 app.post("/login",async(req,res)=>{
  
 try {
-    const {email,password}=req.body;
+    const {email}=req.body;
+    const password=md5(req.body.password);
     const user=await User.findOne({email:email})
-  if(user.email===email&&user.password===password){
+  if(user&&user.password===password){
 
     res.status(200).send("Valid User");
   }
