@@ -40,7 +40,7 @@ try {
 }
 
 
-    res.status(201).json({email,password})
+    // res.status(201).json({email,password})
 })
 app.post("/login",async(req,res)=>{
  
