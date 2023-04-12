@@ -7,11 +7,11 @@ const userSchema=mongoose.Schema(
 
         userName:{
             type:String,
-            unique:true
+          
         },
         password:{
             type:String,
-            unique:true
+           
         }
     }
 );

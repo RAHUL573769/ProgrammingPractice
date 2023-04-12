@@ -4,20 +4,17 @@ const bodyParser=require("body-parser");
 const cors = require('cors');
 const PORT=process.env.PORT||3000;
 const mongoose = require('mongoose');
-
+const connectDb=require("./config/database")
 
 const app=express();
 
 
+const User=require("./models/userModel");
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cors());
 app.set("view engine","ejs");
-mongoose.connect(process.env.MONGO_URL).then(()=>{
-    console.log("Db Connected")
-}).catch((error)=>{
-    console.log(error.message);
-});
+
 app.get("/",(req,res)=>{
     res.render('index');
 })
@@ -26,11 +23,35 @@ app.get("/register",(req,res)=>{
     res.render("register")
 })
 
-app.post("/register",(req,res)=>{
+    
+    
+app.post("/register",async(req,res)=>{
     try {
-        res.status(200).send("User is Registerd In");
+   
+const user=await User.findOne({userName:req.body.username});
+// console.log(req.body.username)
+// console.log(req.body.password)
+if(user){
+   return res.send("User Already Exists");
+}
+else{
+  const newUser=new User({
+
+userName:req.body.username,
+password:req.body.password
+
+
+  });
+    await newUser.save();
+    res.redirect('/login');;
+
+}
+  
+
+
     } catch (error) {
-      res.status(500).send(error.message);  
+      res.status(500).send(error.message);
+      console.log("Erroe")  
     }
 })
 //mongosse connection
@@ -60,5 +81,6 @@ app.get("/profile",(req,res)=>{
 })
 
 app.listen(PORT,()=>{
+    connectDb();
     console.log("Port Running");
 })
