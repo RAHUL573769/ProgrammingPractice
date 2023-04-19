@@ -5,7 +5,7 @@ const connectDb=async(URL)=>{
     try {
         
 const DB_OPTIONS={
-dbName:"geekshop"
+dbName:"shop"
 
 }
 await mongoose.connect(URL,DB_OPTIONS);
