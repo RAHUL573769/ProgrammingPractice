@@ -26,6 +26,7 @@ class UserController {
               tc: tc
             });
             await doc.save();
+            res.send("Data Added");
           } catch (error) {
             console.log(error);
     
