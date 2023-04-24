@@ -5,7 +5,7 @@ const getData = (req, res) => {
 };
 
 const getDynamicData = (req, res) => {
-  console.log(req.params.id);
+  res.send(`My id is${req.params.id}`);
 };
 
 module.exports = { getData, getDynamicData };
