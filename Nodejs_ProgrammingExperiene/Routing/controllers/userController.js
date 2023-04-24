@@ -4,4 +4,8 @@ const getData = (req, res) => {
   res.send("Hello");
 };
 
-module.exports = { getData };
+const getDynamicData = (req, res) => {
+  console.log(req.params.id);
+};
+
+module.exports = { getData, getDynamicData };
