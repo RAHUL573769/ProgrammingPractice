@@ -7,9 +7,12 @@ const { getDynamicData } = require("./controllers/userController");
 app.use("/", userRouter);
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set("view engine", "pug");
+app.set("views", "./views");
+
 app.use("/dynamic", userRouter);
 app.use("/middle", (req, res, next) => {
-  res.send("Hdello");
+  res.send("Hnpm iello");
   next();
 });
 

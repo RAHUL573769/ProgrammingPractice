@@ -8,4 +8,14 @@ const getDynamicData = (req, res) => {
   res.send(`My id is${req.params.id}`);
 };
 
-module.exports = { getData, getDynamicData };
+const viewsData = (req, res) => {
+  res.render("home", {
+    user: {
+      name: "Rahul",
+      age: 21
+    }
+  });
+  console.log("ho");
+};
+
+module.exports = { getData, getDynamicData, viewsData };
