@@ -11,7 +11,9 @@ app.get("/home", (req, res) => {
     }
   });
 });
-
+app.get("/footer", (req, res) => {
+  res.render("footer");
+});
 app.listen(3000, (req, res) => {
   console.log("Seerver is Running");
 });
