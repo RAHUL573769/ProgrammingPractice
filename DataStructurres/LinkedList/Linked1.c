@@ -27,11 +27,11 @@ int main(){
 struct Node *head;
 struct Node *middle;
 struct Node *last;
-head=(struct Node* )malloc(sizeof(struct Node));
-middle=(struct Node*)malloc(sizeof(struct Node));
+head=malloc(sizeof(struct Node));
+middle=malloc(sizeof(struct Node));
 
 
-last=(struct Node*)malloc(sizeof(struct Node));
+last=malloc(sizeof(struct Node));
 head->data=13;
 head->next=middle;
 middle->data=14;
