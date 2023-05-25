@@ -29,6 +29,32 @@ void pushAnElement(int value)
         stack[top] = value;
     }
 }
+int isEmpty()
+{
+    if (stack[size] == -1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int pop()
+{
+
+    int data;
+    if (!isEmpty() == 1)
+    {
+        printf("Stack is Empty");
+    }
+    else
+    {
+        data = stack[top];
+        top--;
+        return data;
+    }
+}
 
 int peek()
 {
@@ -41,5 +67,9 @@ int main()
     pushAnElement(20);
     pushAnElement(30);
     printf("%d", peek());
-    return 0;
+
+    printf("Elements are");
+    int data = pop();
+    printf("%d", data);
+        return 0;
 }
