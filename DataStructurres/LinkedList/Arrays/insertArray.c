@@ -18,13 +18,27 @@ int main()
     int index = 3;
     int arraySize = 10;
     int element = 9;
+    printf("Array Before Insertion");
 
     displayArray(array, 4);
     insertAtIndex(array, 3, arraySize, element, 100);
     arraySize += 1;
+    printf("Array After Insertion");
+
     displayArray(array, arraySize);
 
+    indexDelete(array, index, arraySize);
+    printf("Array After Deletion");
+    displayArray(array, arraySize);
     return 0;
+}
+indexDelete(int array[], int index, int a)
+{
+
+    for (int i = index; i < a; i++)
+    {
+        array[index] = array[i + 1];
+    }
 }
 insertAtIndex(int array[], int index, int arraySize, int element, int capacity)
 {
