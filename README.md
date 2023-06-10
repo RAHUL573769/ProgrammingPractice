@@ -1,1 +1,1 @@
-This Repository Contains all C programs From Dell 
+This Repository Contains all My pramming practises
