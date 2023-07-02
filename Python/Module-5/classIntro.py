@@ -22,11 +22,14 @@ class calculator:
     name='Ac Casino'
     def sum(self,a,b):
         return a+b
+    def __init__(self,owner,brand):
+        self.owner=owner
+        self.brand=brand
     def substract(self,a,b):
         return a-b
     
-my_calculator=calculator()
+my_calculator=calculator(owner='Rahul',brand='Oppo')
 calcName=my_calculator.name
-print(calcName)
+print(my_calculator.owner)
 sumOfCalculator=my_calculator.sum(1,3)
 print(sumOfCalculator)
