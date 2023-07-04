@@ -31,4 +31,24 @@ class Camera(Device):
 myCamera=Camera(color='Blue',name='Oppo',pixel=123,price=12)
 myCamera.name='Rahul'
 print(myCamera.name)
+
+class Vehicle:
+    def __init__(self,weight,color,name) -> None:
+        self.weight=weight
+        self.color=color
+        self.name=name
+
+class Car(Vehicle):
+    def __init__(self,ac,weight,color,name) -> None:
+        self.ac=ac
+        super().__init__(weight,color,name)
+class PrivateCar(Car):
+    def __init__(self, ac, weight, color, name) -> None:
+        self.ac=ac
+        super().__init__(ac, weight, color, name)
+
+
+myCar=PrivateCar(ac='Present',color='Vlur',name='Rolex',weight=466)
+print(PrivateCar.color)
+print(PrivateCar.color)
         
