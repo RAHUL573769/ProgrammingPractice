@@ -13,9 +13,19 @@ print(p1.name)
 
 class Vehicle:
     def __init__(self,name,type) -> None:
-        self.name=name
-        self.type=type
+        self.myname=name
+        self.mytype=type
         pass
     
 v1=Vehicle("Corolla",'Pickup')
-print(v1.name)
+print(v1.mytype)
+
+class Dog:
+    def __init__(self,name,age) -> None:
+        self.myName=name
+        self.myAge=age
+    
+    def bark(self):
+        print("Woof")
+d1=Dog('Frankie',12)
+d1.bark()
