@@ -26,6 +26,16 @@ class Dog:
         self.myAge=age
     
     def bark(self):
-        print("Woof")
+        print(f"Woof myname is {self.myName}")
 d1=Dog('Frankie',12)
 d1.bark()
+
+class Circle:
+    pi=3.1416
+    def __init__(self,radius) -> None:
+        self.radius=radius
+        pass
+    def get_circumference(self):
+        return 2*self.pi*self.radius
+c1=Circle(23)
+print(c1.get_circumference())
