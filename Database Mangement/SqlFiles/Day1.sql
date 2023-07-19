@@ -1,5 +1,6 @@
 create database studentinfo;
 use studentinfo;
+desc students;
 create table students(
 
 roll int,
