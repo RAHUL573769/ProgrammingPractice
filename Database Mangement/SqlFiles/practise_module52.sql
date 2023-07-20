@@ -33,4 +33,9 @@ VALUES ('Ringo', 'Tabby', 4),
        desc cats;
        
        select * from cats;
+              select * from cats where breed="Tabby";
+              
+update cats set name="Tabby " where cat_id=7;
+       select * from cats;
+
        
